@@ -1,0 +1,41 @@
+Execution time for ArrayLinearList:
+====================================
+added 1 elements:	1858175 nanoseconds
+removed 1 elements:	0 nanoseconds
+----------------------------------
+added 10 elements:	26775 nanoseconds
+removed 10 elements:	0 nanoseconds
+----------------------------------
+added 100 elements:	498458 nanoseconds
+removed 100 elements:	0 nanoseconds
+----------------------------------
+added 1000 elements:	8839270 nanoseconds
+removed 1000 elements:	5 nanoseconds
+----------------------------------
+added 10000 elements:	55706859 nanoseconds
+removed 10000 elements:	39 nanoseconds
+----------------------------------
+added 39000 elements:	683902827 nanoseconds
+removed 39000 elements:	537 nanoseconds
+----------------------------------
+
+Execution time for ChainLinearList:
+====================================
+added 1 elements:	924625 nanoseconds
+removed 1 elements:	31237 nanoseconds
+----------------------------------
+added 10 elements:	6694 nanoseconds
+removed 10 elements:	5801 nanoseconds
+----------------------------------
+added 100 elements:	40162 nanoseconds
+removed 100 elements:	171805 nanoseconds
+----------------------------------
+added 1000 elements:	768438 nanoseconds
+removed 1000 elements:	3173266 nanoseconds
+----------------------------------
+added 10000 elements:	2156714 nanoseconds
+removed 10000 elements:	310116564 nanoseconds
+----------------------------------
+added 39000 elements:	2035335 nanoseconds
+removed 39000 elements:	5550479739 nanoseconds
+----------------------------------
