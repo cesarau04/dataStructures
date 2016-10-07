@@ -1,3 +1,4 @@
+
 package LinearList;
 
 import java.util.NoSuchElementException;
@@ -156,4 +157,17 @@ public class ArrayLinearList<T> implements LinearList<T> {
 	                return this.nextIndex > 0;
 	        }
 	}
+	
+	public static ArrayLinearList<Character> toCharacterArrayLinearList(String in) {
+		  if ( in == null ) {
+		     return null;
+		   }
+		   
+		   int len = in.length();
+		   ArrayLinearList<Character> list = new ArrayLinearList<>(len);
+		   for (int i = 0; i < len ; i++) {
+		     list.add(i, new Character(in.charAt(i)));
+		   }
+		   return list;
+		}
 }

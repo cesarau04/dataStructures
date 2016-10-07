@@ -1,3 +1,4 @@
+package Tarea1;
 
 public class Tarea1 {
 
@@ -41,7 +42,7 @@ public class Tarea1 {
 	}
 
 	public static void main(String[] args) {
-		Clase1 actividades = new Clase1();
+		Tarea1 actividades = new Tarea1();
 		System.out.println("Ascendente");
 		actividades.enAscendente(10); System.out.println("Decendente");
 		actividades.enDesendente(16); System.out.println("Divisi�n por resta");

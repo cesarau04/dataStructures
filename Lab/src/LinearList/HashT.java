@@ -16,8 +16,9 @@ public class HashT<K,V> {
 	private static final int INI_CAP=13;
 	private Node<K,V>[] table;
 
+	@SuppressWarnings("unchecked")
 	public HashT(){
-		this.capacity=this.INI_CAP;
+		this.capacity=HashT.INI_CAP;
 		this.size=0;
 		table = new Node[this.capacity];
 	}
@@ -25,6 +26,7 @@ public class HashT<K,V> {
 	/**
 	 * @param capacity Initialize the table with the given capacity
 	 */
+	@SuppressWarnings("unchecked")
 	public HashT(int capacity){
 		this.capacity=capacity;
 		this.size=0;
@@ -98,6 +100,7 @@ public class HashT<K,V> {
 	 * @param value The value to be stored
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	public void put(K key, V value) {
 		if (key==null||value==null) {
 			throw new IllegalArgumentException("Neither null-keys nor null-values are accepted");
@@ -109,7 +112,7 @@ public class HashT<K,V> {
 			}
 			return;
 		}
-		Node<K,V>   = newNode;
+		//Node<K,V> = newNode;
 		this.size++;
 	}
 
@@ -120,6 +123,7 @@ public class HashT<K,V> {
 		int pos=this.hash(key);
 		for (Node<K,V> x = table[pos]; x!=null; x=x.next) {
 			if (x.key.equals(key)){
+				@SuppressWarnings("unused")
 				Node<K,V> newNode = new Node<K,V>(x.key, x.value, table[pos]);
 			}
 		}
