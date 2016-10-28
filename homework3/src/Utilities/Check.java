@@ -1,8 +1,9 @@
 package Utilities;
 
-import LinearList.ChainLinearList;
 import java.util.ListIterator;
 import java.util.Stack;
+
+import LinearList.ChainLinearList;
 
 public class Check {
   public static boolean Iterative(ChainLinearList<Integer> binary) {

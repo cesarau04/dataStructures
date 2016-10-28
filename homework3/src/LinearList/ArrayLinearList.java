@@ -2,6 +2,9 @@
 package LinearList;
 
 import java.util.NoSuchElementException;
+
+import LinearList.LinearList;
+
 import java.util.ListIterator;
 
 public class ArrayLinearList<T> implements LinearList<T> {
