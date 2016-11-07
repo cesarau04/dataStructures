@@ -1,9 +1,8 @@
 package hashtable;
 
-import hashtable.HashTable;
 import java.math.BigInteger;
-import java.util.NoSuchElementException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -223,7 +222,19 @@ public class HashTableOpenAddressing<K, V> implements HashTable<K, V> {
 	        hashTable = (Entry<K, V>[])new Entry[m];
 	        n = 0;
 	      }
-	
-	    
+
+   public static void main(String[] args) {
+      HashTableOpenAddressing<Integer, String> hs = new HashTableOpenAddressing<>();
+
+      hs.add(18, "Cesar");
+      hs.add(24, "Lolis");
+
+      System.out.println(hs.contains(18));
+      System.out.println(hs.getSize());
+      System.out.println(hs.remove(18));
+      System.out.println(hs.contains(18));
+      System.out.println(hs.getSize());
+   }
+
 
 }

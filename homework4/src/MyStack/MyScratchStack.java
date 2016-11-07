@@ -22,13 +22,13 @@ public class MyScratchStack<T> implements StackInterface<T>{
 
 	@Override
 	public void push(T element) {
-		ensureCapacity();
-		topIndex++;
+        resize();
+        topIndex++;
 		stack[topIndex] = element;
 	}
-	
-	private void ensureCapacity(){
-		if (topIndex == stack.length - 1)
+
+   private void resize() {
+      if (topIndex == stack.length - 1)
 			stack = Arrays.copyOf(stack, 2 * stack.length);
 	}
 

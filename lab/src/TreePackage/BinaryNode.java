@@ -98,7 +98,7 @@ public class BinaryNode<T> implements BinaryNodeInterface<T>{
 	//Not implemented due to unnecessary!
 	@Override
 	public BinaryNodeInterface<T> copy() {
-		return null;
-	}
+        throw new UnsupportedOperationException();
+     }
 
 }

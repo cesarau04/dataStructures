@@ -8,11 +8,11 @@ public class ChainLinearList<T> implements LinearList<T>  {
 	 int size;
 	 CNode<T> first;
 
- 	public ChainLinearList() { 
-		this.first = null;
+   public ChainLinearList() {
+      this.first = null;
 		this.size = 0;
  	}
- 	
+
  	public ChainLinearList(T[] array) {
  	    this();
  	    for (T el : array) {
@@ -24,45 +24,45 @@ public class ChainLinearList<T> implements LinearList<T>  {
  		return new ChainItr();
  	}
 
- 	private void checkIndex(int index) { 
- 		if (index < 0 || index > this.size) {
+   private void checkIndex(int index) {
+      if (index < 0 || index > this.size) {
  			throw new IndexOutOfBoundsException();
  		}
  	}
 
- 	public ListIterator<T> getIterator(int index) { 
- 		checkIndex(index);
+   public ListIterator<T> getIterator(int index) {
+      checkIndex(index);
  		return new ChainItr(index);
  	}
 
  	@Override
- 	public boolean isEmpty() { 
- 		return this.size == 0;
+     public boolean isEmpty() {
+        return this.size == 0;
  	}
- 	
+
  	@Override
- 	public int size() { 
- 		return this.size;
+     public int size() {
+        return this.size;
  	}
- 	
+
  	@Override
  	public T get(int index) {
  		checkIndex(index);
  		return getNode(index).value;
  	}
 
- 	private CNode<T> getNode(int index) { 
- 		CNode<T> n = this.first;
+   private CNode<T> getNode(int index) {
+      CNode<T> n = this.first;
  		while (index > 0) {
  			n = n.next;
  			index--;
  		}
  		return n;
  	}
- 
+
  	@Override
- 	public int indexOf(T x) { 
- 		ListIterator<T> iterator = this.getIterator();
+     public int indexOf(T x) {
+        ListIterator<T> iterator = this.getIterator();
  		while (iterator.hasNext()) {
  			T current = iterator.next();
  			if (current == x) {
@@ -71,11 +71,11 @@ public class ChainLinearList<T> implements LinearList<T>  {
  		}
  		return -1;
  	}
- 	
+
  	@Override
  	public T remove(int index) {
  		checkIndex(index);
- 		
+
  		if(index == 0){
  			CNode<T> toRemove = getNode(index);
  			this.first = toRemove.next;
@@ -88,15 +88,15 @@ public class ChainLinearList<T> implements LinearList<T>  {
  		this.size--;
  		return toRemove.value;
  	}
- 	
- 	
- 	public void add(T element) {
+
+
+   public void add(T element) {
  	    this.add(this.size, element);
  	}
- 	
+
 	@Override
- 	public void add(int index, T element) { 
- 		checkIndex(index);
+     public void add(int index, T element) {
+        checkIndex(index);
  		if(index==0){
  			CNode<T> oldFirst = getNode(index);
  			CNode<T> newFirst = new CNode<T>(element);
@@ -132,13 +132,13 @@ public class ChainLinearList<T> implements LinearList<T>  {
 		    } sb.append(actualN.value + " ]");
 		    System.out.println(sb);
 	}
-	
- 	
- 	private static class CNode<T> {
+
+
+   private static class CNode<T> {
  		T value;
  		CNode<T> next;
- 		
- 		public CNode(T value){
+
+      public CNode(T value){
  			this.value=value;
  		}
 
@@ -148,19 +148,19 @@ public class ChainLinearList<T> implements LinearList<T>  {
  			this.next = next;
  		}
  	}
- 
- 	
- 	class ChainItr implements ListIterator<T> {
+
+
+   class ChainItr implements ListIterator<T> {
  		CNode<T> next;
  		CNode<T> ultimoVisitado = null;
  		int nextIndex;
- 		
- 		public ChainItr() {
+
+      public ChainItr() {
  			this.next = first;
  			this.nextIndex = 0;
  		}
- 		
- 		public ChainItr(int index) {
+
+      public ChainItr(int index) {
  			if (index == size) {
  				this.next = null;
  			} else {
@@ -168,19 +168,19 @@ public class ChainLinearList<T> implements LinearList<T>  {
  			}
  			this.nextIndex = index;
  		}
- 		
- 		@Override
- 		public int previousIndex() { 
- 			return this.nextIndex - 1;
+
+      @Override
+      public int previousIndex() {
+         return this.nextIndex - 1;
  		}
  		@Override
  		public int nextIndex() {
  			return this.nextIndex;
  		}
- 		
- 		@Override
- 		public T next() { 
- 			if (this.hasNext()) {
+
+      @Override
+      public T next() {
+         if (this.hasNext()) {
  				ultimoVisitado = this.next;
  				this.nextIndex++;
  				this.next = this.next.next;
@@ -189,16 +189,16 @@ public class ChainLinearList<T> implements LinearList<T>  {
  			else throw new NoSuchElementException();
  		}
  		@Override
- 		public boolean hasNext() { 
- 			return this.next != null;
+          public boolean hasNext() {
+             return this.next != null;
  		}
- 		
- 		//unused methods due to unnecessary
+
+      //unused methods due to unnecessary
  		@Override public void add(T e){}
  		@Override public void set(T e){}
  		@Override public void remove(){}
  		@Override public boolean hasPrevious() {return false;}
  		@Override public T previous() {return null;}
- 		
- 	}
-}	
+
+   }
+}

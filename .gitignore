@@ -17,3 +17,10 @@ bin
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/
+Fisica/Fisica.iml
+homework1/homework1.iml
+homework2/homework2.iml
+homework3/homework3.iml
+homework4/homework4.iml
+lab/lab.iml

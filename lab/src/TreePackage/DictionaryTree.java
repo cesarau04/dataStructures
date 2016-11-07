@@ -1,9 +1,8 @@
 package TreePackage;
 
-import java.util.Iterator;
-import TreePackage.*;
-
 import DictionaryPackage.DictionaryInterface;
+
+import java.util.Iterator;
 
 public class DictionaryTree<K extends Comparable<? super K>, V> implements DictionaryInterface<K,V> {
 

@@ -181,5 +181,9 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
 		return null;
 	}
 
+   public static void main(String[] args) {
+
+   }
+
 	
 }
